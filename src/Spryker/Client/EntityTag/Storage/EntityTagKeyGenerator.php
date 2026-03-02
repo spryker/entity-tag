@@ -18,20 +18,11 @@ class EntityTagKeyGenerator implements EntityTagKeyGeneratorInterface
      */
     protected $synchronizationService;
 
-    /**
-     * @param \Spryker\Client\EntityTag\Dependency\Service\EntityTagToSynchronizationServiceInterface $synchronizationService
-     */
     public function __construct(EntityTagToSynchronizationServiceInterface $synchronizationService)
     {
         $this->synchronizationService = $synchronizationService;
     }
 
-    /**
-     * @param string $resourceName
-     * @param string $resourceId
-     *
-     * @return string
-     */
     public function generate(string $resourceName, string $resourceId): string
     {
         $synchronizationDataTransfer = (new SynchronizationDataTransfer())

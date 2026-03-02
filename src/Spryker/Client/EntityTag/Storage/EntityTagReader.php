@@ -21,22 +21,12 @@ class EntityTagReader implements EntityTagReaderInterface
      */
     protected $storageClient;
 
-    /**
-     * @param \Spryker\Client\EntityTag\Storage\EntityTagKeyGeneratorInterface $entityTagKeyGenerator
-     * @param \Spryker\Client\EntityTag\Dependency\Client\EntityTagToStorageClientInterface $storageClient
-     */
     public function __construct(EntityTagKeyGeneratorInterface $entityTagKeyGenerator, EntityTagToStorageClientInterface $storageClient)
     {
         $this->entityTagKeyGenerator = $entityTagKeyGenerator;
         $this->storageClient = $storageClient;
     }
 
-    /**
-     * @param string $resourceName
-     * @param string $resourceId
-     *
-     * @return string|null
-     */
     public function read(string $resourceName, string $resourceId): ?string
     {
         $entityTagKey = $this->entityTagKeyGenerator->generate($resourceName, $resourceId);

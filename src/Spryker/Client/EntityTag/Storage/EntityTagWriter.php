@@ -34,12 +34,6 @@ class EntityTagWriter implements EntityTagWriterInterface
      */
     protected $utilEncodingService;
 
-    /**
-     * @param \Spryker\Client\EntityTag\Storage\EntityTagKeyGeneratorInterface $entityTagKeyGenerator
-     * @param \Spryker\Client\EntityTag\Dependency\Client\EntityTagToStorageClientInterface $storageClient
-     * @param \Spryker\Client\EntityTag\Dependency\Service\EntityTagToUtilTextServiceInterface $utilTextService
-     * @param \Spryker\Client\EntityTag\Dependency\Service\EntityTagToUtilEncodingServiceInterface $utilEncodingService
-     */
     public function __construct(
         EntityTagKeyGeneratorInterface $entityTagKeyGenerator,
         EntityTagToStorageClientInterface $storageClient,
@@ -52,13 +46,6 @@ class EntityTagWriter implements EntityTagWriterInterface
         $this->utilEncodingService = $utilEncodingService;
     }
 
-    /**
-     * @param string $resourceName
-     * @param string $resourceId
-     * @param array $resourceAttributes
-     *
-     * @return string
-     */
     public function write(string $resourceName, string $resourceId, array $resourceAttributes): string
     {
         $entityTagKey = $this->entityTagKeyGenerator->generate($resourceName, $resourceId);

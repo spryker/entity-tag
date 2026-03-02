@@ -9,12 +9,5 @@ namespace Spryker\Client\EntityTag\Storage;
 
 interface EntityTagWriterInterface
 {
-    /**
-     * @param string $resourceName
-     * @param string $resourceId
-     * @param array $resourceAttributes
-     *
-     * @return string
-     */
     public function write(string $resourceName, string $resourceId, array $resourceAttributes): string;
 }

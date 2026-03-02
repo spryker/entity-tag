@@ -24,9 +24,6 @@ use Spryker\Client\Kernel\AbstractFactory;
  */
 class EntityTagFactory extends AbstractFactory
 {
-    /**
-     * @return \Spryker\Client\EntityTag\Storage\EntityTagReaderInterface
-     */
     public function createEntityTagReader(): EntityTagReaderInterface
     {
         return new EntityTagReader(
@@ -35,9 +32,6 @@ class EntityTagFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\EntityTag\Storage\EntityTagKeyGeneratorInterface
-     */
     public function createEntityTagKeyGenerator(): EntityTagKeyGeneratorInterface
     {
         return new EntityTagKeyGenerator(
@@ -45,9 +39,6 @@ class EntityTagFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\EntityTag\Storage\EntityTagWriterInterface
-     */
     public function createEntityTagWriter(): EntityTagWriterInterface
     {
         return new EntityTagWriter(
@@ -58,33 +49,21 @@ class EntityTagFactory extends AbstractFactory
         );
     }
 
-    /**
-     * @return \Spryker\Client\EntityTag\Dependency\Client\EntityTagToStorageClientInterface
-     */
     public function getStorageClient(): EntityTagToStorageClientInterface
     {
         return $this->getProvidedDependency(EntityTagDependencyProvider::CLIENT_STORAGE);
     }
 
-    /**
-     * @return \Spryker\Client\EntityTag\Dependency\Service\EntityTagToUtilEncodingServiceInterface
-     */
     public function getUtilEncodingService(): EntityTagToUtilEncodingServiceInterface
     {
         return $this->getProvidedDependency(EntityTagDependencyProvider::SERVICE_UTIL_ENCODING);
     }
 
-    /**
-     * @return \Spryker\Client\EntityTag\Dependency\Service\EntityTagToUtilTextServiceInterface
-     */
     public function getUtilTextService(): EntityTagToUtilTextServiceInterface
     {
         return $this->getProvidedDependency(EntityTagDependencyProvider::SERVICE_UTIL_TEXT);
     }
 
-    /**
-     * @return \Spryker\Client\EntityTag\Dependency\Service\EntityTagToSynchronizationServiceInterface
-     */
     public function getSynchronizationService(): EntityTagToSynchronizationServiceInterface
     {
         return $this->getProvidedDependency(EntityTagDependencyProvider::SERVICE_SYNCHRONIZATION);

@@ -9,11 +9,5 @@ namespace Spryker\Client\EntityTag\Storage;
 
 interface EntityTagKeyGeneratorInterface
 {
-    /**
-     * @param string $resourceName
-     * @param string $resourceId
-     *
-     * @return string
-     */
     public function generate(string $resourceName, string $resourceId): string;
 }
