@@ -12,6 +12,8 @@ use Spryker\Client\Kernel\AbstractBundleConfig;
 class EntityTagConfig extends AbstractBundleConfig
 {
     /**
+     * @api
+     *
      * @var string
      */
     public const ENTITY_TAG_RESOURCE_NAME = 'entity_tag';
